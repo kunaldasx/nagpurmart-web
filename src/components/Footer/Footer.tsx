@@ -484,7 +484,7 @@ const Footer: FC = () => {
               >{`V ${version}`}</Chip>
             </div>
 
-            <div className="flex items-center justify-center sm:justify-end gap-2 text-sm text-slate-400">
+            {/* <div className="flex items-center justify-center sm:justify-end gap-2 text-sm text-slate-400">
               <span>{t("footer.bottom_bar.powered_by")}</span>
               <a
                 href="https://infinitietech.com/"
@@ -494,7 +494,7 @@ const Footer: FC = () => {
               >
                 Infinitietech
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
