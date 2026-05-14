@@ -93,13 +93,13 @@ const Footer: FC = () => {
                 {t("footer.quick_links.header")}
               </h2>
               <div className="space-y-1">
-{[
+                {[
                   {
                     label: t("footer.quick_links.about_us"),
                     href: "/about-us",
                   },
                   { label: t("footer.quick_links.faqs"), href: "/faqs" },
-                   {
+                  {
                     label: t("footer.quick_links.delivery_zones"),
                     href: "/delivery-zones",
                   },
@@ -249,7 +249,7 @@ const Footer: FC = () => {
                 {`V ${version}`}
               </Chip>
             </div>
-            <div className="text-xs text-slate-400">
+            {/* <div className="text-xs text-slate-400">
               <span>{t("footer.bottom_bar.powered_by")} </span>
               <a
                 href="https://infinitietech.com/"
@@ -259,7 +259,7 @@ const Footer: FC = () => {
               >
                 Infinitietech
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
 
@@ -305,13 +305,13 @@ const Footer: FC = () => {
                 {t("footer.quick_links.header")}
               </h2>
               <div className="space-y-3">
-{[
+                {[
                   {
                     label: t("footer.quick_links.about_us"),
                     href: "/about-us",
                   },
                   { label: t("footer.quick_links.faqs"), href: "/faqs" },
-                   {
+                  {
                     label: t("footer.quick_links.delivery_zones"),
                     href: "/delivery-zones",
                   },
@@ -320,7 +320,7 @@ const Footer: FC = () => {
                         {
                           label: t("footer.quick_links.stores"),
                           href: "/stores",
-                        },  
+                        },
                         {
                           label: "Become a Seller",
                           href: "/seller-register",
