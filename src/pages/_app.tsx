@@ -15,7 +15,7 @@ import i18n from "../../i18n";
 
 const ToastProvider = dynamic(
   () => import("@heroui/react").then((mod) => mod.ToastProvider),
-  { ssr: false }
+  { ssr: false },
 );
 
 const ProgressBar = dynamic(() => import("@/components/ProgressBar"), {
@@ -95,6 +95,7 @@ function App({ Component, pageProps }: AppPropsWithLayout) {
             ),
           }}
         />
+
         <ReduxProvider>{getLayout(<Component {...pageProps} />)}</ReduxProvider>
       </NextThemesProvider>
     </HeroUIProvider>

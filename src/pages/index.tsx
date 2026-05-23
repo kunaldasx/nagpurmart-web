@@ -3,7 +3,6 @@ import HomeCategories from "@/views/homePage/HomeCategories";
 import HomeTopSlider from "@/views/homePage/HomeTopSlider";
 import { GetServerSideProps } from "next";
 import { getHomePageData } from "@/services/homePageService";
-
 import DeliveryBanner from "@/views/homePage/DeliveryBanner";
 import {
   BannerData,
@@ -68,7 +67,7 @@ const HomePage: NextPageWithLayout<HomePageProps> = ({
   const organizationSchema = generateOrganizationSchema(
     siteName,
     siteDescription,
-    siteLogo
+    siteLogo,
   );
 
   const websiteSchema = generateWebsiteSchema(siteName);
@@ -95,8 +94,6 @@ const HomePage: NextPageWithLayout<HomePageProps> = ({
         <HomeCategories initialCategories={initialCategories} />
 
         <HomeStores initialStores={initialStores} />
-
-
 
         <HomeCarouselSlider initialBanners={initialBanners} />
 

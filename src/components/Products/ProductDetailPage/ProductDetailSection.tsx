@@ -211,7 +211,9 @@ const ProductDetailSection: FC<ProductDetailSectionProps> = ({
                 const parsed = JSON.parse(userLocStr);
                 lat = parsed.lat || "";
                 lng = parsed.lng || "";
-              } catch (e) {console.error("Failed to parse user location from cookie:", e);}
+              } catch (e) {
+                console.error("Failed to parse user location from cookie:", e);
+              }
             }
             let shareUrl = `${baseUrl}/share/products/${initialProduct.slug}`;
             if (lat && lng) {
@@ -498,6 +500,7 @@ const ProductDetailSection: FC<ProductDetailSectionProps> = ({
               isLoading={loading.add}
               isDisabled={loading.buyNow}
               onPress={() => AddToCart(false)}
+              className="bg-white text-black border-1 border-[#FFC81E]"
             >
               {t("addToBucket")}
             </Button>
@@ -508,6 +511,7 @@ const ProductDetailSection: FC<ProductDetailSectionProps> = ({
               isLoading={loading.buyNow}
               isDisabled={loading.add}
               onPress={() => AddToCart(true)}
+              className="bg-[#FFC81E]"
             >
               {t("buyNow")}
             </Button>

@@ -113,11 +113,11 @@ const DeliveryBanner: React.FC = () => {
                   "
                 >
                   {/* Glow */}
-                  <div className="absolute inset-0 bg-linear-to-br from-yellow-400/30 to-orange-400/30 rounded-full blur-2xl scale-110" />
+                  {/* <div className="absolute inset-0 bg-linear-to-br from-yellow-400/30 to-orange-400/30 rounded-full blur-2xl scale-110" /> */}
 
                   {/* Image */}
                   <Image
-                    src="/images/delivery-boy-blue.png"
+                    src="/images/delivery-boy.png"
                     alt="Delivery person"
                     radius="lg"
                     className="relative z-10 w-56 h-60 sm:w-72 sm:h-80 lg:w-80 lg:h-96 object-cover drop-shadow-2xl"

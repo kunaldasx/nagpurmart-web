@@ -24,6 +24,7 @@ import CookieConsent from "@/components/Functional/CookieConsent";
 import { store } from "@/lib/redux/store";
 import { getCookie } from "@/lib/cookies";
 import { handleLogout } from "@/helpers/auth";
+
 const RemovedItemsModal = dynamic(
   () => import("@/components/Modals/RemovedItemsModal"),
   { ssr: false },
@@ -140,23 +141,31 @@ export default function DefaultLayout({
       ) : isLoading && !isSSR() ? (
         <div className="relative h-screen w-full flex flex-col justify-center items-center overflow-hidden bg-white">
           {/* Smoke */}
-          <div className="absolute left-1/2 top-1/2 -translate-x-24 translate-y-4 flex gap-2">
+          {/* <div className="absolute left-1/2 top-1/2 -translate-x-24 translate-y-4 flex gap-2">
             <span className="smoke" />
             <span className="smoke delay-150" />
             <span className="smoke delay-300" />
-          </div>
+          </div> */}
           {/* Bike GIF */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/logos/logo-loading.gif"
+          {/* <img
+            src="/logos/logo-loading.png"
             alt="Loading"
             className="relative z-10 w-32 h-32"
             loading="eager"
-          />
+          /> */}
           {/* Road */}
-          <div className="absolute bottom-[45%] w-72 h-0.5 overflow-hidden hidden">
+          {/* <div className="absolute bottom-[45%] w-72 h-0.5 overflow-hidden hidden">
             <div className="road" />
-          </div>
+          </div> */}
+
+          <section className="dots-container">
+            <div className="dot"></div>
+            <div className="dot"></div>
+            <div className="dot"></div>
+            <div className="dot"></div>
+            <div className="dot"></div>
+          </section>
         </div>
       ) : (
         <>
