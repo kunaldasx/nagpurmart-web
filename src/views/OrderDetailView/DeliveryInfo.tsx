@@ -68,7 +68,7 @@ const DeliveryInfo: FC<DeliveryInfoProps> = ({
                   size="sm"
                   color="warning"
                   variant="flat"
-                  className="text-xs"
+                  className="text-xs text-black"
                   onPress={onDeliveryRatingOpen}
                   startContent={<Truck className="w-4 h-4" />}
                   title={t("deliveryReview")}

@@ -26,7 +26,7 @@ type AddressSelectionModalProps = {
   handleConfirmSelection: () => void;
   getAddressTypeIcon: (type: string) => string;
   getAddressTypeColor: (
-    type: string
+    type: string,
   ) => "success" | "primary" | "warning" | "default";
   isLoading?: boolean;
   totalAddresses: number;
@@ -139,7 +139,7 @@ const AddressSelectionModal: React.FC<AddressSelectionModalProps> = ({
                               <Chip
                                 size="sm"
                                 color={getAddressTypeColor(
-                                  address.address_type
+                                  address.address_type,
                                 )}
                                 variant="flat"
                                 className="text-xs capitalize"
@@ -192,7 +192,7 @@ const AddressSelectionModal: React.FC<AddressSelectionModalProps> = ({
                 <Button
                   color="primary"
                   onPress={handleConfirmSelection}
-                  className="text-sm"
+                  className="text-sm text-black"
                   isDisabled={
                     !tempSelectedId || tempSelectedId === selectedAddressId
                   }

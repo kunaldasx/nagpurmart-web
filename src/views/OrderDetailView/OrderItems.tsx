@@ -49,7 +49,7 @@ const OrderItems: FC<OrderItemsProps> = ({
         acc[storeId].items.push(item);
         return acc;
       },
-      {} as Record<number, GroupedStore>
+      {} as Record<number, GroupedStore>,
     );
 
     return Object.values(grouped);
@@ -132,7 +132,7 @@ const OrderItems: FC<OrderItemsProps> = ({
           )}
           {buttonConfig.returnOrder &&
             order.items.some(
-              (item) => item.product?.is_returnable && item.return_eligible
+              (item) => item.product?.is_returnable && item.return_eligible,
             ) &&
             onReturnOpen && (
               <Button
@@ -201,7 +201,7 @@ const OrderItems: FC<OrderItemsProps> = ({
                             )}
                           </h3>
 
-                          {!((item as any)?.product) && (
+                          {!(item as any)?.product && (
                             <p className="text-xxs sm:text-xs text-red-600 dark:text-red-400">
                               {item.title} product is deleted.
                             </p>
@@ -272,7 +272,7 @@ const OrderItems: FC<OrderItemsProps> = ({
                                 size="sm"
                                 variant="flat"
                                 color="warning"
-                                className="text-xs h-7 px-3"
+                                className="text-xs h-7 px-3 text-black"
                                 startContent={<Star size={12} />}
                                 title={t("review")}
                               >

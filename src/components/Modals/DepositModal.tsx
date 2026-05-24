@@ -133,7 +133,7 @@ const DepositModal = () => {
           } else {
             console.error(
               "Invalid or missing Flutterwave payment link:",
-              paymentLink
+              paymentLink,
             );
             addToast({
               title: t("checkout.flutterwave_link_invalid"),
@@ -240,7 +240,7 @@ const DepositModal = () => {
         radius="md"
         title={t("deposit_title")}
         color="primary"
-        className="px-2 py-0.5 w-20 text-xs font-medium transition-colors md:px-4 md:py-1 md:w-24 md:text-sm"
+        className="px-2 py-0.5 w-20 text-xs text-black font-medium transition-colors md:px-4 md:py-1 md:w-24 md:text-sm"
       >
         {t("deposit_title")}
       </Button>

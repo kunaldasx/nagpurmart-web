@@ -59,7 +59,7 @@ const OrderItemReviewCard: FC<OrderItemReviewCardProps> = ({ userReview }) => {
         color="success"
         variant="flat"
         radius="sm"
-        className="cursor-pointer"
+        className="cursor-pointer text-black"
         classNames={{ content: "text-xs" }}
         startContent={<Star size={12} className="fill-current" />}
       >

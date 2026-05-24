@@ -187,7 +187,7 @@ const OrderDetailPageView: React.FC<OrderDetailPageViewProps> = ({ order }) => {
                     }
                   }}
                   title={t("invoice")}
-                  className="text-xs"
+                  className="text-xs text-black"
                 >
                   {t("invoice")}
                 </Button>
@@ -202,7 +202,7 @@ const OrderDetailPageView: React.FC<OrderDetailPageViewProps> = ({ order }) => {
                   onPress={handleReorder}
                   isLoading={isReordering}
                   title={t("reorder")}
-                  className="text-xs"
+                  className="text-xs text-black"
                 >
                   {t("reorder")}
                 </Button>

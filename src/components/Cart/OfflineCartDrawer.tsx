@@ -58,7 +58,7 @@ const OfflineCartDrawer: FC<OfflineCartDrawerProps> = ({ isOpen, onClose }) => {
     direction: "inc" | "dec",
     minQuantity?: number,
     maxQuantity?: number,
-    stock?: number
+    stock?: number,
   ) => {
     const delta = direction === "inc" ? step : -step;
     const newQuantity = currentQuantity + delta;
@@ -115,7 +115,7 @@ const OfflineCartDrawer: FC<OfflineCartDrawerProps> = ({ isOpen, onClose }) => {
       updateOfflineCartItemQuantity({
         id,
         quantity: newQuantity,
-      })
+      }),
     );
   };
   const handleRemoveItem = () => {
@@ -230,7 +230,7 @@ const OfflineCartDrawer: FC<OfflineCartDrawerProps> = ({ isOpen, onClose }) => {
                                     "dec",
                                     item.minQuantity,
                                     item.maxQuantity,
-                                    item.stock
+                                    item.stock,
                                   )
                                 }
                               >
@@ -251,7 +251,7 @@ const OfflineCartDrawer: FC<OfflineCartDrawerProps> = ({ isOpen, onClose }) => {
                                     "inc",
                                     item.minQuantity,
                                     item.maxQuantity,
-                                    item.stock
+                                    item.stock,
                                   )
                                 }
                               >
@@ -306,7 +306,11 @@ const OfflineCartDrawer: FC<OfflineCartDrawerProps> = ({ isOpen, onClose }) => {
           </DrawerBody>
 
           <DrawerFooter className="flex flex-col gap-2">
-            <Button color="primary" className="w-full" onPress={handleLogin}>
+            <Button
+              color="primary"
+              className="w-full text-black"
+              onPress={handleLogin}
+            >
               {t("cart.login_required") || "Please login to continue"}
             </Button>
           </DrawerFooter>

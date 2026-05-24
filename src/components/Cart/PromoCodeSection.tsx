@@ -27,7 +27,7 @@ const PromoCodeSection: FC = () => {
   const { t } = useTranslation();
 
   const { promoCode, selectedAddress } = useSelector(
-    (state: RootState) => state.checkout
+    (state: RootState) => state.checkout,
   );
 
   const handleApplyPromoCode = async () => {
@@ -162,7 +162,7 @@ const PromoCodeSection: FC = () => {
                     color="primary"
                     variant="light"
                     size="sm"
-                    className="text-xs"
+                    className="text-xs text-black"
                     onPress={onOpen}
                     isDisabled={isApplying}
                   >
@@ -173,7 +173,7 @@ const PromoCodeSection: FC = () => {
               <Button
                 color="primary"
                 size="sm"
-                className="text-xs"
+                className="text-xs text-black"
                 onPress={handleApplyPromoCode}
                 isLoading={isApplying}
                 isDisabled={isLoading || !code.trim()}

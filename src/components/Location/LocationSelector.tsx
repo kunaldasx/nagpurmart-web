@@ -74,6 +74,54 @@ const LocationSelector = () => {
   // Create a ref for LocationAutoComplete
   const autocompleteRef = useRef<LocationAutoCompleteRef>(null);
 
+  const detectCurrentLocation = () => {
+    if (!navigator.geolocation) return;
+
+    navigator.geolocation.getCurrentPosition(
+      async (position) => {
+        const latLng = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude,
+        };
+
+        try {
+          const geocoder = new (window as any).google.maps.Geocoder();
+
+          const result = await geocoder.geocode({
+            location: latLng,
+          });
+
+          if (result.results[0]) {
+            const newLocation = {
+              placeName: result.results[0].formatted_address,
+              latLng,
+              placeDescription: "",
+            };
+
+            setSelectedLatLng(latLng);
+            setSelectedLocation(newLocation);
+
+            setCookie("userLocation", {
+              lat: latLng.lat,
+              lng: latLng.lng,
+              placeName: newLocation.placeName,
+              placeDescription: "",
+            });
+          }
+        } catch (error) {
+          console.error("Location detection failed:", error);
+        }
+      },
+      (error) => {
+        console.error("Geolocation permission denied:", error);
+      },
+      {
+        enableHighAccuracy: true,
+        timeout: 10000,
+      },
+    );
+  };
+
   // Initialize component with cookie data
   useEffect(() => {
     const initializeLocation = () => {
@@ -98,6 +146,16 @@ const LocationSelector = () => {
     };
 
     initializeLocation();
+
+    const userLocation = getCookie("userLocation") as UserLocation;
+
+    if (!userLocation) {
+      waitForGoogleMaps().then((loaded) => {
+        if (loaded) {
+          detectCurrentLocation();
+        }
+      });
+    }
   }, []);
 
   // Initialize temp state when modal opens.
@@ -133,7 +191,7 @@ const LocationSelector = () => {
     try {
       const res = await handleCheckZone(
         location.latLng.lat,
-        location.latLng.lng
+        location.latLng.lng,
       );
 
       if (res) {
@@ -166,7 +224,7 @@ const LocationSelector = () => {
       const startTime = Date.now();
 
       const checkGoogleMaps = () => {
-        if (window.google?.maps?.Geocoder) {
+        if ((window as any).google?.maps?.Geocoder) {
           resolve(true);
         } else if (Date.now() - startTime > timeout) {
           resolve(false);
@@ -197,7 +255,7 @@ const LocationSelector = () => {
       setDeliveryCheckLoading(true);
 
       try {
-        const geocoder = new window.google.maps.Geocoder();
+        const geocoder = new (window as any).google.maps.Geocoder();
         const result = await geocoder.geocode({ location: latLng });
 
         if (result?.results[0]) {
@@ -253,7 +311,7 @@ const LocationSelector = () => {
       try {
         const res = await handleCheckZone(
           demoMode ? defaultLocation?.lat || staticLat : tempSelectedLatLng.lat,
-          demoMode ? defaultLocation?.lng || staticLng : tempSelectedLatLng.lng
+          demoMode ? defaultLocation?.lng || staticLng : tempSelectedLatLng.lng,
         );
 
         if (res) {

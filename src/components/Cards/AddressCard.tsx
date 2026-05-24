@@ -139,11 +139,11 @@ const AddressCard: FC<AddressCardProps> = ({ address, onDelete, onEdit }) => {
                 </div>
               }
               title={t(
-                `${address.address_type == "home" ? "home_title" : address.address_type}`
+                `${address.address_type == "home" ? "home_title" : address.address_type}`,
               )}
             >
               {t(
-                `${address.address_type == "home" ? "home_title" : address.address_type}`
+                `${address.address_type == "home" ? "home_title" : address.address_type}`,
               )}
             </Chip>
           </div>
@@ -208,7 +208,7 @@ const AddressCard: FC<AddressCardProps> = ({ address, onDelete, onEdit }) => {
             color="primary"
             startContent={<Eye className="w-3 h-3" />}
             onPress={onOpen}
-            className="flex-1 text-xs"
+            className="flex-1 text-xs text-black"
             isDisabled={isLoading}
             title={t("view_map")}
           >

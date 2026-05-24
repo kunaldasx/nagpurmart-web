@@ -140,7 +140,9 @@ const OrderCard: FC<OrderCardProps> = ({ order }) => {
                     }}
                     title={formatString(order?.status)}
                   >
-                    <span className="truncate">{formatString(order?.status)}</span>
+                    <span className="truncate">
+                      {formatString(order?.status)}
+                    </span>
                   </Chip>
                 </div>
 
@@ -181,7 +183,7 @@ const OrderCard: FC<OrderCardProps> = ({ order }) => {
                   color="primary"
                   startContent={<Download className="w-4 h-4" />}
                   title={t("invoice")}
-                  className="text-xs font-medium min-w-8 h-8 w-8"
+                  className="text-xs text-black font-medium min-w-8 h-8 w-8"
                   isIconOnly
                   onPress={() => {
                     if (order.invoice) window.open(order.invoice, "_blank");
@@ -403,14 +405,13 @@ const OrderCard: FC<OrderCardProps> = ({ order }) => {
                 size="sm"
                 variant="bordered"
                 startContent={<Star className="w-3 h-3" />}
-                className="text-xs font-medium w-full col-span-2"
+                className="text-xs text-black font-medium w-full col-span-2"
                 onPress={onReviewOpen}
                 title={t("deliveryReview")}
               >
                 {t("deliveryReview")}
               </Button>
             )}
-
         </CardFooter>
       </Card>
 

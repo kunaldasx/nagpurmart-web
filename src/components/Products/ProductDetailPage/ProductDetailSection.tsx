@@ -428,12 +428,10 @@ const ProductDetailSection: FC<ProductDetailSectionProps> = ({
                       color="primary"
                       as={"div"}
                       size="sm"
-                      className="text-xs"
-                      startContent={
-                        <Clock className="w-4 h-4 text-primary-500" />
-                      }
+                      className="text-xs bg-[#dbeafe]"
+                      startContent={<Clock className="w-4 h-4 text-black" />}
                     >
-                      <div className="text-xs text-primary-500 font-semibold whitespace-nowrap flex items-center">
+                      <div className="text-xs text-black font-semibold whitespace-nowrap flex items-center">
                         <span className="mr-2">{t("delivery")}:</span>
                         {initialProduct.estimated_delivery_time} {t("mins")}
                       </div>
@@ -511,7 +509,7 @@ const ProductDetailSection: FC<ProductDetailSectionProps> = ({
               isLoading={loading.buyNow}
               isDisabled={loading.add}
               onPress={() => AddToCart(true)}
-              className="bg-[#FFC81E]"
+              className="bg-[#FFC81E] text-black"
             >
               {t("buyNow")}
             </Button>
@@ -528,6 +526,7 @@ const ProductDetailSection: FC<ProductDetailSectionProps> = ({
                 variant="flat"
                 key={index}
                 radius="sm"
+                className="text-black bg-[#dbeafe]"
               >
                 {`# ${tag}`}
               </Chip>

@@ -70,7 +70,7 @@ const ForgotPassword: NextPageWithLayout = (props: ForgotPasswordProps) => {
         setErrorMessage(
           error.response?.data?.message ||
             error.message ||
-            t("pages.forgotPassword.error")
+            t("pages.forgotPassword.error"),
         );
       } else if (error instanceof Error) {
         setErrorMessage(error.message);
@@ -190,7 +190,7 @@ const ForgotPassword: NextPageWithLayout = (props: ForgotPasswordProps) => {
             <Button
               type="submit"
               color="primary"
-              className="w-full"
+              className="w-full text-black"
               isLoading={loading}
               isDisabled={!email || isEmailInvalid}
             >

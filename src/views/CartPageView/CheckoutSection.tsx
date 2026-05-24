@@ -78,7 +78,7 @@ const CheckoutSection: FC<CheckoutSectionProps> = ({ cart }) => {
 
       if (itemsRequiringAttachments.length > 0) {
         const itemsMissingAttachments = itemsRequiringAttachments.filter(
-          (item) => !attachments[item.product.id]
+          (item) => !attachments[item.product.id],
         );
 
         if (itemsMissingAttachments.length > 0) {
@@ -192,14 +192,14 @@ const CheckoutSection: FC<CheckoutSectionProps> = ({ cart }) => {
     items?.length > 0
   ) {
     const uniqueStoreIds = new Set(
-      items.map((item) => item.store?.id).filter(Boolean)
+      items.map((item) => item.store?.id).filter(Boolean),
     );
     if (uniqueStoreIds.size > 1) {
       validationErrors.push(
         t("checkout.validation.multipleStores", {
           defaultValue:
             "Your cart contains products from multiple stores. Single store checkout only allows products from one store.",
-        })
+        }),
       );
     }
   }
@@ -216,7 +216,7 @@ const CheckoutSection: FC<CheckoutSectionProps> = ({ cart }) => {
           Number(total_quantity) -
           Number(systemSettings.maximumItemsAllowedInCart),
         defaultValue: `Maximum ${systemSettings.maximumItemsAllowedInCart} items allowed in cart. You have ${total_quantity} items.`,
-      })
+      }),
     );
   }
 
@@ -234,7 +234,7 @@ const CheckoutSection: FC<CheckoutSectionProps> = ({ cart }) => {
         remainingAmount: formatAmount(remainingAmount),
         currencySymbol,
         defaultValue: `Minimum cart amount is ${currencySymbol}${formatAmount(systemSettings.minimumCartAmount)}. Add ${currencySymbol}${formatAmount(remainingAmount)} more to proceed.`,
-      })
+      }),
     );
   }
 
@@ -512,7 +512,7 @@ const CheckoutSection: FC<CheckoutSectionProps> = ({ cart }) => {
             />
           ) : payment_summary.payable_amount == 0 && isWalletUse ? (
             <Button
-              className="w-full font-medium py-3 rounded-lg"
+              className="w-full font-medium py-3 rounded-lg text-black"
               color="primary"
               isLoading={loading}
               onPress={() => handleCheckoutClick(true)}
@@ -522,7 +522,7 @@ const CheckoutSection: FC<CheckoutSectionProps> = ({ cart }) => {
             </Button>
           ) : (
             <Button
-              className="w-full font-medium py-3 rounded-lg"
+              className="w-full font-medium py-3 rounded-lg text-black"
               color="primary"
               onPress={() => handleCheckoutClick(false)}
               isDisabled={isLoading}

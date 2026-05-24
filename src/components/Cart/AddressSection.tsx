@@ -31,7 +31,7 @@ const AddressSection: FC<AddressSectionProps> = ({ onAddAddressModalOpen }) => {
 
   const dispatch = useDispatch();
   const selectedAddress = useSelector(
-    (state: RootState) => state.checkout.selectedAddress
+    (state: RootState) => state.checkout.selectedAddress,
   );
 
   const [shouldFetchAll, setShouldFetchAll] = useState(false);
@@ -42,7 +42,7 @@ const AddressSection: FC<AddressSectionProps> = ({ onAddAddressModalOpen }) => {
   // Create SWR keys that include resetTrigger to force refetch on reset
   const initialDataKey = useMemo(
     () => ["/cart-addresses/initial", 1, 1, resetTrigger] as const,
-    [resetTrigger]
+    [resetTrigger],
   );
 
   // Fetch initial data to get total count
@@ -65,7 +65,7 @@ const AddressSection: FC<AddressSectionProps> = ({ onAddAddressModalOpen }) => {
         addresses: response.data.data || [],
         total: response.data.total || 0,
       };
-    }
+    },
   );
 
   // Derive total from initialData
@@ -77,7 +77,7 @@ const AddressSection: FC<AddressSectionProps> = ({ onAddAddressModalOpen }) => {
       shouldFetchAll && total > 0
         ? (["/cart-addresses/all", 1, total, resetTrigger] as const)
         : null,
-    [shouldFetchAll, total, resetTrigger]
+    [shouldFetchAll, total, resetTrigger],
   );
 
   // Fetch all addresses when modal needs to open
@@ -100,13 +100,13 @@ const AddressSection: FC<AddressSectionProps> = ({ onAddAddressModalOpen }) => {
         addresses: response.data.data || [],
         total: response.data.total || 0,
       };
-    }
+    },
   );
 
   // Derive allAddresses from SWR data with useMemo to prevent recreation on every render
   const allAddresses = useMemo(
     () => allAddressesData?.addresses || [],
-    [allAddressesData?.addresses]
+    [allAddressesData?.addresses],
   );
 
   // Clear redux selected address on initial mount
@@ -131,7 +131,7 @@ const AddressSection: FC<AddressSectionProps> = ({ onAddAddressModalOpen }) => {
         typeof key[0] === "string" &&
         key[0].includes("/cart-addresses"),
       undefined,
-      { revalidate: true }
+      { revalidate: true },
     );
   }, []);
 
@@ -151,7 +151,7 @@ const AddressSection: FC<AddressSectionProps> = ({ onAddAddressModalOpen }) => {
   const handleConfirmSelection = useCallback(() => {
     if (tempSelectedId) {
       const selectedAddr = allAddresses.find(
-        (addr) => addr.id.toString() === tempSelectedId
+        (addr) => addr.id.toString() === tempSelectedId,
       );
       if (selectedAddr) {
         updateCartData(false, false, selectedAddr?.id?.toString() || "");
@@ -223,7 +223,7 @@ const AddressSection: FC<AddressSectionProps> = ({ onAddAddressModalOpen }) => {
               color="primary"
               variant="flat"
               startContent={<Plus className="w-4 h-4" />}
-              className="text-xs"
+              className="text-xs text-black"
               onPress={onAddAddressModalOpen}
             >
               {t("address.addNew")}
@@ -232,7 +232,7 @@ const AddressSection: FC<AddressSectionProps> = ({ onAddAddressModalOpen }) => {
               <Button
                 variant="bordered"
                 color="primary"
-                className="text-xs"
+                className="text-xs text-black"
                 size="sm"
                 fullWidth
                 onPress={handleSelectAddressClick}
@@ -312,7 +312,7 @@ const AddressSection: FC<AddressSectionProps> = ({ onAddAddressModalOpen }) => {
                   variant="flat"
                   color="primary"
                   size="sm"
-                  className="text-xs"
+                  className="text-xs text-black"
                   onPress={handleSelectAddressClick}
                   startContent={<MapPin className="w-4 h-4" />}
                 >

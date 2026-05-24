@@ -96,7 +96,7 @@ export const LoginModal: FC<LoginModalProps> = ({ triggerView = "btn" }) => {
     demoMode ? demoPassword : "",
   );
 
-  const [loginMode, setLoginMode] = useState<LoginMode>("mobile");
+  const [loginMode, setLoginMode] = useState<LoginMode>("otp");
   const [isEmailReadOnly, setIsEmailReadOnly] = useState(true);
   const [isMobileReadOnly, setIsMobileReadOnly] = useState(true);
 
@@ -658,7 +658,7 @@ export const LoginModal: FC<LoginModalProps> = ({ triggerView = "btn" }) => {
           startContent={<LogIn size={16} />}
           size="responsive"
           variant="flat"
-          className="p-0 text-xs"
+          className="p-0 text-xs text-black"
         >
           {t("login_modal.button")}
         </MyButton>
@@ -723,10 +723,20 @@ export const LoginModal: FC<LoginModalProps> = ({ triggerView = "btn" }) => {
                     classNames={{
                       cursor: "w-full bg-primary",
                       tab: "max-w-fit",
-                      tabContent:
-                        "group-data-[selected=true]:text-primary-foreground",
+                      // tabContent:
+                      //   "group-data-[selected=true]:text-primary-foreground",
                     }}
                   >
+                    <Tab
+                      key="otp"
+                      title={
+                        <div className="flex items-center gap-2">
+                          <Phone size={16} />
+                          <span>{t("login_modal.otp_tab")}</span>
+                        </div>
+                      }
+                    />
+
                     <Tab
                       key="mobile"
                       title={
@@ -742,15 +752,6 @@ export const LoginModal: FC<LoginModalProps> = ({ triggerView = "btn" }) => {
                         <div className="flex items-center gap-2">
                           <Mail size={16} />
                           <span>{t("login_modal.email_tab")}</span>
-                        </div>
-                      }
-                    />
-                    <Tab
-                      key="otp"
-                      title={
-                        <div className="flex items-center gap-2">
-                          <Phone size={16} />
-                          <span>{t("login_modal.otp_tab")}</span>
                         </div>
                       }
                     />
@@ -789,7 +790,7 @@ export const LoginModal: FC<LoginModalProps> = ({ triggerView = "btn" }) => {
 
                       <Button
                         color="primary"
-                        className="w-full font-medium"
+                        className="w-full font-medium text-black"
                         type="submit"
                         isLoading={isLoading}
                         isDisabled={
@@ -841,7 +842,7 @@ export const LoginModal: FC<LoginModalProps> = ({ triggerView = "btn" }) => {
                       </div>
                       <Button
                         color="primary"
-                        className="w-full font-medium"
+                        className="w-full font-medium text-black"
                         type="submit"
                         isLoading={isLoading}
                         isDisabled={isResendingOtp}
@@ -969,7 +970,7 @@ export const LoginModal: FC<LoginModalProps> = ({ triggerView = "btn" }) => {
                     {/* Submit Button */}
                     <Button
                       color="primary"
-                      className="w-full font-medium"
+                      className="w-full font-medium text-black"
                       type="submit"
                       isLoading={isLoading}
                       isDisabled={isCheckingEmail || isCheckingMobile}

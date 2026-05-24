@@ -696,9 +696,7 @@ export const RegisterModal: FC = () => {
 
                                     if (response.success) {
                                       addToast({
-                                        title: t(
-                                          "signup_toast.otp_sent_title",
-                                        ),
+                                        title: t("signup_toast.otp_sent_title"),
                                         description: t(
                                           "signup_toast.otp_sent_desc",
                                         ),
@@ -752,91 +750,95 @@ export const RegisterModal: FC = () => {
                               {fieldErrors.phone}
                             </div>
                           )}
-                          {isCustomGateway && isOtpRequested && !isPhoneVerified && (
-                            <div className="mt-4">
-                              <div className="flex w-full justify-center">
-                                <InputOtp
-                                  length={6}
-                                  placeholder={t(
-                                    "register_modal.fields.otp.placeholder",
-                                  )}
-                                  variant="flat"
-                                  name="customOtp"
+                          {isCustomGateway &&
+                            isOtpRequested &&
+                            !isPhoneVerified && (
+                              <div className="mt-4">
+                                <div className="flex w-full justify-center">
+                                  <InputOtp
+                                    length={6}
+                                    placeholder={t(
+                                      "register_modal.fields.otp.placeholder",
+                                    )}
+                                    variant="flat"
+                                    name="customOtp"
+                                    color="primary"
+                                    size="lg"
+                                    radius="md"
+                                    value={otpValue}
+                                    onValueChange={setOtpValue}
+                                    classNames={{
+                                      wrapper: "flex gap-2 justify-center",
+                                      errorMessage: "sm:text-xs text-center",
+                                    }}
+                                  />
+                                </div>
+                                <Button
                                   color="primary"
-                                  size="lg"
-                                  radius="md"
-                                  value={otpValue}
-                                  onValueChange={setOtpValue}
-                                  classNames={{
-                                    wrapper: "flex gap-2 justify-center",
-                                    errorMessage: "sm:text-xs text-center",
-                                  }}
-                                />
-                              </div>
-                              <Button
-                                color="primary"
-                                className="w-full font-medium mt-3"
-                                type="button"
-                                isLoading={isVerifyingOtp}
-                                isDisabled={!otpValue || otpValue.length !== 6}
-                                onPress={async () => {
-                                  setIsVerifyingOtp(true);
-                                  try {
-                                    const response = await verifyOtp({
-                                      mobile: phoneNumber,
-                                      otp: otpValue,
-                                    });
-
-                                    if (response.success) {
-                                      setIsPhoneVerified(true);
-                                      addToast({
-                                        title:
-                                          t(
-                                            "register_modal.toasts.otp_verified.title",
-                                          ) || "Verified",
-                                        description:
-                                          t(
-                                            "register_modal.toasts.otp_verified.description",
-                                          ) ||
-                                          "Phone number verified successfully.",
-                                        color: "success",
+                                  className="w-full font-medium text-black mt-3"
+                                  type="button"
+                                  isLoading={isVerifyingOtp}
+                                  isDisabled={
+                                    !otpValue || otpValue.length !== 6
+                                  }
+                                  onPress={async () => {
+                                    setIsVerifyingOtp(true);
+                                    try {
+                                      const response = await verifyOtp({
+                                        mobile: phoneNumber,
+                                        otp: otpValue,
                                       });
-                                    } else {
+
+                                      if (response.success) {
+                                        setIsPhoneVerified(true);
+                                        addToast({
+                                          title:
+                                            t(
+                                              "register_modal.toasts.otp_verified.title",
+                                            ) || "Verified",
+                                          description:
+                                            t(
+                                              "register_modal.toasts.otp_verified.description",
+                                            ) ||
+                                            "Phone number verified successfully.",
+                                          color: "success",
+                                        });
+                                      } else {
+                                        addToast({
+                                          title:
+                                            t(
+                                              "register_modal.toasts.verification_error.title",
+                                            ) || "Verification failed",
+                                          description:
+                                            response.message ||
+                                            "Invalid or expired OTP. Please try again.",
+                                          color: "danger",
+                                        });
+                                      }
+                                    } catch (error) {
+                                      console.error(
+                                        "Custom SMS verify OTP error (register):",
+                                        error,
+                                      );
                                       addToast({
                                         title:
                                           t(
                                             "register_modal.toasts.verification_error.title",
                                           ) || "Verification failed",
                                         description:
-                                          response.message ||
-                                          "Invalid or expired OTP. Please try again.",
+                                          "Failed to verify OTP. Please try again.",
                                         color: "danger",
                                       });
+                                    } finally {
+                                      setIsVerifyingOtp(false);
                                     }
-                                  } catch (error) {
-                                    console.error(
-                                      "Custom SMS verify OTP error (register):",
-                                      error,
-                                    );
-                                    addToast({
-                                      title:
-                                        t(
-                                          "register_modal.toasts.verification_error.title",
-                                        ) || "Verification failed",
-                                      description:
-                                        "Failed to verify OTP. Please try again.",
-                                      color: "danger",
-                                    });
-                                  } finally {
-                                    setIsVerifyingOtp(false);
-                                  }
-                                }}
-                              >
-                                {t("register_modal.buttons.verify_code") ||
-                                  "Verify Code"}
-                              </Button>
-                            </div>
-                          )}
+                                  }}
+                                >
+                                  {t("register_modal.buttons.verify_code") ||
+                                    "Verify Code"}
+                                </Button>
+                              </div>
+                            )}
                         </div>
 
                         <Input
@@ -921,7 +923,7 @@ export const RegisterModal: FC = () => {
 
                       <Button
                         color="primary"
-                        className="w-full font-medium"
+                        className="w-full font-medium text-black"
                         type="submit"
                         isLoading={isLoading}
                         isDisabled={!isFormValid()}

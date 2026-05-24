@@ -81,7 +81,7 @@ const MyAccount: NextPageWithLayout<MyAccountPageProps> = ({ initialData }) => {
 
   const handleInputChange = (
     field: string,
-    value: string | number | boolean
+    value: string | number | boolean,
   ) => {
     setFormData({ ...formData, [field]: value });
   };
@@ -336,7 +336,7 @@ const MyAccount: NextPageWithLayout<MyAccountPageProps> = ({ initialData }) => {
                         countryCode,
                         phoneNumber,
                         dialCode,
-                        name
+                        name,
                       ) => {
                         if (
                           typeof phoneNumber !== "string" ||
@@ -363,7 +363,7 @@ const MyAccount: NextPageWithLayout<MyAccountPageProps> = ({ initialData }) => {
                 <Button
                   type="submit"
                   color="primary"
-                  className="max-w-xs"
+                  className="max-w-xs text-black"
                   isLoading={isLoading}
                 >
                   {t("pages.myAccount.saveChanges")}

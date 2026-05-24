@@ -443,7 +443,12 @@ const NotificationsPage: NextPageWithLayout = () => {
                     {pagination?.total ?? notifications.length} Total
                   </span>
                   {unreadCount > 0 && (
-                    <Chip size="sm" color="primary" variant="flat" classNames={{ base: "text-xs" }}>
+                    <Chip
+                      size="sm"
+                      color="primary"
+                      variant="flat"
+                      classNames={{ base: "text-xs" }}
+                    >
                       {unreadCount} new
                     </Chip>
                   )}
@@ -463,7 +468,7 @@ const NotificationsPage: NextPageWithLayout = () => {
                       )
                     }
                     onPress={handleMarkAllRead}
-                    className="text-xs"
+                    className="text-xs text-black"
                   >
                     mark all read
                   </Button>

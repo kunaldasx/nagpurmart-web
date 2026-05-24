@@ -33,7 +33,7 @@ const ProductCardAddButton: FC<ProductCardAddButtonProps> = ({
   const dispatch = useDispatch();
   const cartData = useSelector((state: RootState) => state.cart.cartData);
   const offlineCartItems = useSelector(
-    (state: RootState) => state.offlineCart.items
+    (state: RootState) => state.offlineCart.items,
   );
   const isLoggedIn = useSelector((state: RootState) => state.auth.isLoggedIn);
 
@@ -41,11 +41,11 @@ const ProductCardAddButton: FC<ProductCardAddButtonProps> = ({
   const cartItem = useMemo(() => {
     if (isLoggedIn) {
       return cartData?.items?.find(
-        (item) => item.product_variant_id === defaultVariant.id
+        (item) => item.product_variant_id === defaultVariant.id,
       );
     } else {
       return offlineCartItems?.find(
-        (item) => item.product_variant_id === defaultVariant.id
+        (item) => item.product_variant_id === defaultVariant.id,
       );
     }
   }, [cartData, offlineCartItems, defaultVariant.id, isLoggedIn]);
@@ -84,7 +84,7 @@ const ProductCardAddButton: FC<ProductCardAddButtonProps> = ({
               updateOfflineCartItemQuantity({
                 id: offlineItemId,
                 quantity: quantity,
-              })
+              }),
             );
             addToast({
               title: t("cart_updated_title"),
@@ -152,7 +152,7 @@ const ProductCardAddButton: FC<ProductCardAddButtonProps> = ({
           setIsUpdating(false);
         }
       }, 500),
-    [defaultVariant, isLoggedIn, cartItem, product, dispatch, t]
+    [defaultVariant, isLoggedIn, cartItem, product, dispatch, t],
   );
 
   const handleQuantityChange = useCallback(
@@ -199,7 +199,7 @@ const ProductCardAddButton: FC<ProductCardAddButtonProps> = ({
       setLocalQuantity(newQuantity);
       debouncedAddToCart(newQuantity);
     },
-    [product, defaultVariant, debouncedAddToCart, t]
+    [product, defaultVariant, debouncedAddToCart, t],
   );
 
   const handleIncrement = useCallback(() => {
@@ -243,7 +243,7 @@ const ProductCardAddButton: FC<ProductCardAddButtonProps> = ({
           onPress={handleDecrement}
           isDisabled={isUpdating}
         >
-          <Minus size={14} className="" />
+          <Minus size={14} className="text-black" />
         </Button>
         <span
           className={`text-xs md:text-sm font-semibold min-w-5  sm:min-w-6.5 text-center  ${isUpdating ? "opacity-60" : ""}`}
@@ -264,7 +264,7 @@ const ProductCardAddButton: FC<ProductCardAddButtonProps> = ({
           onPress={handleIncrement}
           isDisabled={isUpdating}
         >
-          <Plus size={14} className="" />
+          <Plus size={14} className="text-black" />
         </Button>
       </div>
     );
@@ -274,7 +274,7 @@ const ProductCardAddButton: FC<ProductCardAddButtonProps> = ({
   return (
     <>
       <Button
-        className="text-xs px-0 w-4 h-8 md:flex hidden"
+        className="text-xs text-black px-0 w-4 h-8 md:flex hidden"
         color="primary"
         onPress={handleInitialAdd}
         radius="lg"
@@ -285,7 +285,7 @@ const ProductCardAddButton: FC<ProductCardAddButtonProps> = ({
         {t("add")}
       </Button>
       <Button
-        className="rounded-full md:hidden"
+        className="text-black rounded-full md:hidden"
         color="primary"
         isIconOnly
         onPress={handleInitialAdd}

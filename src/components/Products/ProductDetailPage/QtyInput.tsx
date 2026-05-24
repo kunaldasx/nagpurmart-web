@@ -78,6 +78,7 @@ const QtyInput: FC<QtyInputProps> = ({
           color="primary"
           size="sm"
           isDisabled={quantity == 1}
+          className="text-black"
         >
           <Minus size={12} />
         </Button>
@@ -90,6 +91,7 @@ const QtyInput: FC<QtyInputProps> = ({
           onPress={increment}
           color="primary"
           size="sm"
+          className="text-black"
           // isDisabled={quantity >= max || quantity >= stock}
         >
           <Plus size={12} />

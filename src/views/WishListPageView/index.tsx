@@ -87,7 +87,7 @@ const WishListPageView: React.FC<WishListPageViewProps> = ({
                   color="primary"
                   variant="flat"
                   startContent={<Plus className="w-4 h-4" />}
-                  className="text-xs"
+                  className="text-xs text-black"
                   onPress={onCreateWishListModalOpen}
                 >
                   {t("wishlist_create_new")}
@@ -142,7 +142,7 @@ const WishListPageView: React.FC<WishListPageViewProps> = ({
                         <p className="text-xs text-default-500">
                           {t("created")}{" "}
                           {new Date(
-                            selectedWishlist.created_at
+                            selectedWishlist.created_at,
                           ).toLocaleDateString()}
                         </p>
                       </div>
