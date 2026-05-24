@@ -500,7 +500,7 @@ const ProductDetailSection: FC<ProductDetailSectionProps> = ({
               isLoading={loading.add}
               isDisabled={loading.buyNow}
               onPress={() => AddToCart(false)}
-              className="bg-white text-black border-1 border-[#FFC81E]"
+              className="bg-white text-black border-1 border-[#FFC81E] hover:bg-[#FFC81E] hover:text-white"
             >
               {t("addToBucket")}
             </Button>
