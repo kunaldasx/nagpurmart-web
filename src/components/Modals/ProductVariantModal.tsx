@@ -77,7 +77,7 @@ const ProductVariantModal: FC<ProductVariantModalProps> = ({
         product.id.toString(),
         product.title,
         product.category_name,
-        product.variants?.[0]?.price
+        product.variants?.[0]?.price,
       );
     }
   }, [product, isOpen, dispatch]);
@@ -102,7 +102,7 @@ const ProductVariantModal: FC<ProductVariantModalProps> = ({
     const newQuantity = currentQuantity + change;
     const maxQuantity = Math.min(
       product.total_allowed_quantity || 9999,
-      variant.stock
+      variant.stock,
     );
 
     if (newQuantity > variant.stock) {
@@ -482,11 +482,11 @@ const ProductVariantModal: FC<ProductVariantModalProps> = ({
                               loadingVariantId !== variant.id && (
                                 <ShoppingCart
                                   size={14}
-                                  className="hidden sm:block"
+                                  className="hidden sm:block text-black"
                                 />
                               )
                             }
-                            className="text-xs px-2 sm:px-4"
+                            className="text-xs bg-[#FFC81E] text-black px-2 sm:px-4"
                           >
                             {variant.stock === 0
                               ? t("product_modal.out_of_stock")
