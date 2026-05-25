@@ -239,7 +239,7 @@ const ProductCardAddButton: FC<ProductCardAddButtonProps> = ({
           size="sm"
           variant="flat"
           color="primary"
-          className="min-w-5 w-5 h-5 md:min-w-7 md:w-7 md:h-7"
+          className="bg-[#FFC81E] min-w-5 w-5 h-5 md:min-w-7 md:w-7 md:h-7"
           onPress={handleDecrement}
           isDisabled={isUpdating}
         >
@@ -260,7 +260,7 @@ const ProductCardAddButton: FC<ProductCardAddButtonProps> = ({
           size="sm"
           variant="flat"
           color="primary"
-          className="min-w-5 w-5 h-5 md:min-w-7 md:w-7 md:h-7"
+          className="bg-[#FFC81E] min-w-5 w-5 h-5 md:min-w-7 md:w-7 md:h-7"
           onPress={handleIncrement}
           isDisabled={isUpdating}
         >
@@ -274,7 +274,7 @@ const ProductCardAddButton: FC<ProductCardAddButtonProps> = ({
   return (
     <>
       <Button
-        className="text-xs text-black px-0 w-4 h-8 md:flex hidden"
+        className="text-xs bg-[#FFC81E] text-black px-0 w-4 h-8 md:flex hidden"
         color="primary"
         onPress={handleInitialAdd}
         radius="lg"
@@ -285,7 +285,7 @@ const ProductCardAddButton: FC<ProductCardAddButtonProps> = ({
         {t("add")}
       </Button>
       <Button
-        className="text-black rounded-full md:hidden"
+        className="bg-[#FFC81E] text-black rounded-full md:hidden"
         color="primary"
         isIconOnly
         onPress={handleInitialAdd}

@@ -192,7 +192,7 @@ const AddressSelectionModal: React.FC<AddressSelectionModalProps> = ({
                 <Button
                   color="primary"
                   onPress={handleConfirmSelection}
-                  className="text-sm text-black"
+                  className="text-sm bg-[#FFC81E] text-black"
                   isDisabled={
                     !tempSelectedId || tempSelectedId === selectedAddressId
                   }

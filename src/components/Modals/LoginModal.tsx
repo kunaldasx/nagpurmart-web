@@ -658,7 +658,7 @@ export const LoginModal: FC<LoginModalProps> = ({ triggerView = "btn" }) => {
           startContent={<LogIn size={16} />}
           size="responsive"
           variant="flat"
-          className="p-0 text-xs text-black"
+          className="p-0 text-xs bg-[#FFC81E] text-black"
         >
           {t("login_modal.button")}
         </MyButton>
@@ -721,7 +721,7 @@ export const LoginModal: FC<LoginModalProps> = ({ triggerView = "btn" }) => {
                     selectedKey={loginMode}
                     onSelectionChange={handleTabChange}
                     classNames={{
-                      cursor: "w-full bg-primary",
+                      cursor: "w-full bg-[#FFC81E]",
                       tab: "max-w-fit",
                       // tabContent:
                       //   "group-data-[selected=true]:text-primary-foreground",
@@ -790,7 +790,7 @@ export const LoginModal: FC<LoginModalProps> = ({ triggerView = "btn" }) => {
 
                       <Button
                         color="primary"
-                        className="w-full font-medium text-black"
+                        className="w-full font-medium bg-[#FFC81E] text-black"
                         type="submit"
                         isLoading={isLoading}
                         isDisabled={
@@ -842,7 +842,7 @@ export const LoginModal: FC<LoginModalProps> = ({ triggerView = "btn" }) => {
                       </div>
                       <Button
                         color="primary"
-                        className="w-full font-medium text-black"
+                        className="w-full font-medium bg-[#FFC81E] text-black"
                         type="submit"
                         isLoading={isLoading}
                         isDisabled={isResendingOtp}
@@ -970,7 +970,7 @@ export const LoginModal: FC<LoginModalProps> = ({ triggerView = "btn" }) => {
                     {/* Submit Button */}
                     <Button
                       color="primary"
-                      className="w-full font-medium text-black"
+                      className="w-full font-medium bg-[#FFC81E] text-black"
                       type="submit"
                       isLoading={isLoading}
                       isDisabled={isCheckingEmail || isCheckingMobile}

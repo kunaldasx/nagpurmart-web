@@ -522,7 +522,7 @@ const CheckoutSection: FC<CheckoutSectionProps> = ({ cart }) => {
             </Button>
           ) : (
             <Button
-              className="w-full font-medium py-3 rounded-lg text-black"
+              className="w-full font-medium py-3 rounded-lg bg-[#FFC81E] text-black"
               color="primary"
               onPress={() => handleCheckoutClick(false)}
               isDisabled={isLoading}

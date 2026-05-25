@@ -183,7 +183,7 @@ const OrderCard: FC<OrderCardProps> = ({ order }) => {
                   color="primary"
                   startContent={<Download className="w-4 h-4" />}
                   title={t("invoice")}
-                  className="text-xs text-black font-medium min-w-8 h-8 w-8"
+                  className="text-xs bg-[#FFC81E] text-black font-medium min-w-8 h-8 w-8"
                   isIconOnly
                   onPress={() => {
                     if (order.invoice) window.open(order.invoice, "_blank");

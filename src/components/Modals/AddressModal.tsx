@@ -25,7 +25,7 @@ interface AddressModalProps {
   isOpen: boolean;
   onOpenChange: (isOpen: boolean) => void;
   onSave?: (
-    addressData: Omit<Address, "id" | "user_id" | "created_at" | "updated_at">
+    addressData: Omit<Address, "id" | "user_id" | "created_at" | "updated_at">,
   ) => void;
   initialData?: Partial<Address>;
 }
@@ -60,7 +60,7 @@ const AddressModal: FC<AddressModalProps> = ({
   const [location, setLocation] = useState<{ lat: number; lng: number } | null>(
     initialData?.latitude && initialData?.longitude
       ? { lat: initialData.latitude, lng: initialData.longitude }
-      : defaultLocation
+      : defaultLocation,
   );
 
   const [formData, setFormData] = useState<AddressFormData>({
@@ -148,7 +148,7 @@ const AddressModal: FC<AddressModalProps> = ({
 
         if (locationAutoCompleteRef.current) {
           locationAutoCompleteRef.current.setInputValue(
-            place.formatted_address
+            place.formatted_address,
           );
         }
       } else {
@@ -473,7 +473,12 @@ const AddressModal: FC<AddressModalProps> = ({
           >
             {t("cancel")}
           </Button>
-          <Button color="primary" onPress={handleSave} isLoading={isLoading}>
+          <Button
+            color="primary"
+            onPress={handleSave}
+            isLoading={isLoading}
+            className="bg-[#FFC81E] text-black"
+          >
             {initialData ? t("address.update") : t("save")}
           </Button>
         </ModalFooter>
@@ -483,4 +488,3 @@ const AddressModal: FC<AddressModalProps> = ({
 };
 
 export default AddressModal;
-

@@ -363,7 +363,7 @@ const MyAccount: NextPageWithLayout<MyAccountPageProps> = ({ initialData }) => {
                 <Button
                   type="submit"
                   color="primary"
-                  className="max-w-xs text-black"
+                  className="max-w-xs bg-[#FFC81E] text-black"
                   isLoading={isLoading}
                 >
                   {t("pages.myAccount.saveChanges")}

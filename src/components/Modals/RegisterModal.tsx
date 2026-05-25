@@ -775,7 +775,7 @@ export const RegisterModal: FC = () => {
                                 </div>
                                 <Button
                                   color="primary"
-                                  className="w-full font-medium text-black mt-3"
+                                  className="w-full font-medium bg-[#FFC81E] text-black mt-3"
                                   type="button"
                                   isLoading={isVerifyingOtp}
                                   isDisabled={
@@ -923,7 +923,7 @@ export const RegisterModal: FC = () => {
 
                       <Button
                         color="primary"
-                        className="w-full font-medium text-black"
+                        className="w-full font-medium bg-[#FFC81E] text-black"
                         type="submit"
                         isLoading={isLoading}
                         isDisabled={!isFormValid()}

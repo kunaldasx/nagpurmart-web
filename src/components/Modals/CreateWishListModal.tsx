@@ -124,7 +124,7 @@ const CreateWishListModal = ({
                 onPress={handleCreateWishlist}
                 isLoading={isCreating}
                 variant="solid"
-                className="font-medium text-black"
+                className="font-medium bg-[#FFC81E] text-black"
                 isDisabled={!newListTitle.trim()}
               >
                 {isCreating

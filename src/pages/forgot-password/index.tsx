@@ -190,7 +190,7 @@ const ForgotPassword: NextPageWithLayout = (props: ForgotPasswordProps) => {
             <Button
               type="submit"
               color="primary"
-              className="w-full text-black"
+              className="w-full bg-[#FFC81E] text-black"
               isLoading={loading}
               isDisabled={!email || isEmailInvalid}
             >
