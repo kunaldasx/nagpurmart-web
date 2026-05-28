@@ -150,7 +150,7 @@ export default function SellerRegisterForm() {
 
         if (locationAutoCompleteRef.current) {
           locationAutoCompleteRef.current.setInputValue(
-            place.formatted_address
+            place.formatted_address,
           );
         }
       }
@@ -166,7 +166,7 @@ export default function SellerRegisterForm() {
 
   const handleFileChange = (
     name: keyof FileData,
-    event: React.ChangeEvent<HTMLInputElement>
+    event: React.ChangeEvent<HTMLInputElement>,
   ) => {
     const file = event.target.files?.[0];
     if (!file) return;
@@ -205,7 +205,7 @@ export default function SellerRegisterForm() {
       newErrors.password = t("pages.sellerRegister.error.required");
     if (formData.password !== formData.confirmPassword)
       newErrors.confirmPassword = t(
-        "pages.sellerRegister.error.passwordMismatch"
+        "pages.sellerRegister.error.passwordMismatch",
       );
     if (!formData.address)
       newErrors.address = t("pages.sellerRegister.error.required");
@@ -241,7 +241,7 @@ export default function SellerRegisterForm() {
     const checkFile = (
       file: File | null,
       label: string,
-      key: keyof FileData
+      key: keyof FileData,
     ) => {
       if (!file) {
         missingFiles.push(label);
@@ -256,13 +256,13 @@ export default function SellerRegisterForm() {
     checkFile(
       files.articlesOfIncorporation,
       "Articles of Incorporation",
-      "articlesOfIncorporation"
+      "articlesOfIncorporation",
     );
     checkFile(files.nationalId, "National ID Card", "nationalId");
     checkFile(
       files.authorizedSignature,
       "Authorized Signature",
-      "authorizedSignature"
+      "authorizedSignature",
     );
 
     if (missingFiles.length > 0) {
@@ -325,7 +325,7 @@ export default function SellerRegisterForm() {
       if (files.articlesOfIncorporation) {
         submitData.append(
           "articles_of_incorporation",
-          files.articlesOfIncorporation
+          files.articlesOfIncorporation,
         );
       }
       if (files.nationalId) {
@@ -788,7 +788,7 @@ export default function SellerRegisterForm() {
                   <Input
                     label={t("pages.sellerRegister.form.longitude")}
                     placeholder={t(
-                      "pages.sellerRegister.placeholder.longitude"
+                      "pages.sellerRegister.placeholder.longitude",
                     )}
                     value={formData.longitude}
                     variant="bordered"
@@ -816,6 +816,7 @@ export default function SellerRegisterForm() {
                 color="primary"
                 onPress={handleSubmit}
                 isLoading={isSubmitting}
+                className="bg-[#FFC81E] text-black"
               >
                 {t("pages.sellerRegister.button.register")}
               </Button>

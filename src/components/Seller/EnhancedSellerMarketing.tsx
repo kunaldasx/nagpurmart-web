@@ -29,73 +29,73 @@ export default function EnhancedSellerMarketing() {
     {
       icon: <Truck className="w-5 h-5" />,
       title: t(
-        "pages.enhancedSellerMarketing.benefits.items.deliveryIntegrations.title"
+        "pages.enhancedSellerMarketing.benefits.items.deliveryIntegrations.title",
       ),
       description: t(
-        "pages.enhancedSellerMarketing.benefits.items.deliveryIntegrations.desc"
+        "pages.enhancedSellerMarketing.benefits.items.deliveryIntegrations.desc",
       ),
       metric: t(
-        "pages.enhancedSellerMarketing.benefits.items.deliveryIntegrations.metric"
+        "pages.enhancedSellerMarketing.benefits.items.deliveryIntegrations.metric",
       ),
     },
     {
       icon: <DollarSign className="w-5 h-5" />,
       title: t(
-        "pages.enhancedSellerMarketing.benefits.items.flexibleOnboarding.title"
+        "pages.enhancedSellerMarketing.benefits.items.flexibleOnboarding.title",
       ),
       description: t(
-        "pages.enhancedSellerMarketing.benefits.items.flexibleOnboarding.desc"
+        "pages.enhancedSellerMarketing.benefits.items.flexibleOnboarding.desc",
       ),
       metric: t(
-        "pages.enhancedSellerMarketing.benefits.items.flexibleOnboarding.metric"
+        "pages.enhancedSellerMarketing.benefits.items.flexibleOnboarding.metric",
       ),
     },
     {
       icon: <Clock className="w-5 h-5" />,
       title: t(
-        "pages.enhancedSellerMarketing.benefits.items.localFulfillment.title"
+        "pages.enhancedSellerMarketing.benefits.items.localFulfillment.title",
       ),
       description: t(
-        "pages.enhancedSellerMarketing.benefits.items.localFulfillment.desc"
+        "pages.enhancedSellerMarketing.benefits.items.localFulfillment.desc",
       ),
       metric: t(
-        "pages.enhancedSellerMarketing.benefits.items.localFulfillment.metric"
+        "pages.enhancedSellerMarketing.benefits.items.localFulfillment.metric",
       ),
     },
     {
       icon: <BarChart3 className="w-5 h-5" />,
       title: t(
-        "pages.enhancedSellerMarketing.benefits.items.businessInsights.title"
+        "pages.enhancedSellerMarketing.benefits.items.businessInsights.title",
       ),
       description: t(
-        "pages.enhancedSellerMarketing.benefits.items.businessInsights.desc"
+        "pages.enhancedSellerMarketing.benefits.items.businessInsights.desc",
       ),
       metric: t(
-        "pages.enhancedSellerMarketing.benefits.items.businessInsights.metric"
+        "pages.enhancedSellerMarketing.benefits.items.businessInsights.metric",
       ),
     },
     {
       icon: <Shield className="w-5 h-5" />,
       title: t(
-        "pages.enhancedSellerMarketing.benefits.items.trustedPayments.title"
+        "pages.enhancedSellerMarketing.benefits.items.trustedPayments.title",
       ),
       description: t(
-        "pages.enhancedSellerMarketing.benefits.items.trustedPayments.desc"
+        "pages.enhancedSellerMarketing.benefits.items.trustedPayments.desc",
       ),
       metric: t(
-        "pages.enhancedSellerMarketing.benefits.items.trustedPayments.metric"
+        "pages.enhancedSellerMarketing.benefits.items.trustedPayments.metric",
       ),
     },
     {
       icon: <Users className="w-5 h-5" />,
       title: t(
-        "pages.enhancedSellerMarketing.benefits.items.customerReach.title"
+        "pages.enhancedSellerMarketing.benefits.items.customerReach.title",
       ),
       description: t(
-        "pages.enhancedSellerMarketing.benefits.items.customerReach.desc"
+        "pages.enhancedSellerMarketing.benefits.items.customerReach.desc",
       ),
       metric: t(
-        "pages.enhancedSellerMarketing.benefits.items.customerReach.metric"
+        "pages.enhancedSellerMarketing.benefits.items.customerReach.metric",
       ),
     },
   ];
@@ -108,14 +108,14 @@ export default function EnhancedSellerMarketing() {
     },
     {
       label: t(
-        "pages.enhancedSellerMarketing.about.metrics.creativityInnovation"
+        "pages.enhancedSellerMarketing.about.metrics.creativityInnovation",
       ),
       value: 90,
       color: "bg-blue-500",
     },
     {
       label: t(
-        "pages.enhancedSellerMarketing.about.metrics.businessFinanceMgmt"
+        "pages.enhancedSellerMarketing.about.metrics.businessFinanceMgmt",
       ),
       value: 95,
       color: "bg-purple-500",
@@ -149,7 +149,7 @@ export default function EnhancedSellerMarketing() {
       <div
         className="
     relative overflow-hidden rounded-md
-    bg-[url('/images/seller-banner.png')]
+    bg-[url('/images/seller-banner.jpeg')]
     bg-cover bg-center bg-no-repeat
   "
       >
@@ -179,7 +179,7 @@ export default function EnhancedSellerMarketing() {
                   variant="flat"
                   radius="sm"
                   size="md"
-                  className="bg-white text-black font-semibold shadow-md hover:shadow-lg transition-all flex items-center gap-2"
+                  className="bg-[#FFC81E] text-black font-semibold shadow-md hover:shadow-lg transition-all flex items-center gap-2"
                   endContent={<ArrowRight className="w-4 h-4" />}
                   onPress={() => {
                     const element = document.getElementById("seller-register");
@@ -210,7 +210,7 @@ export default function EnhancedSellerMarketing() {
                 <span className="flex items-center gap-2 text-xs font-medium">
                   <Zap className="w-3.5 h-3.5 text-yellow-300" />
                   {t(
-                    "pages.enhancedSellerMarketing.marquee.socialMediaMarketing"
+                    "pages.enhancedSellerMarketing.marquee.socialMediaMarketing",
                   )}
                 </span>
                 <span className="flex items-center gap-2 text-xs font-medium">
@@ -299,7 +299,7 @@ export default function EnhancedSellerMarketing() {
               size="md"
               as={Link}
               href="/about-us"
-              className="font-semibold shadow-md hover:shadow-lg transition-all max-w-32 flex items-center gap-2 px-5 py-2.5 text-white"
+              className="bg-[#FFC81E] text-black font-semibold shadow-md hover:shadow-lg transition-all max-w-32 flex items-center gap-2 px-5 py-2.5"
               endContent={<ArrowRight className="w-4 h-4" />}
             >
               {t("pages.enhancedSellerMarketing.about.button")}
@@ -411,28 +411,28 @@ export default function EnhancedSellerMarketing() {
                 {
                   icon: <CheckCircle className="w-5 h-5 stroke-2" />,
                   title: t(
-                    "pages.enhancedSellerMarketing.fulfillment.items.partnerIntegrations.title"
+                    "pages.enhancedSellerMarketing.fulfillment.items.partnerIntegrations.title",
                   ),
                   desc: t(
-                    "pages.enhancedSellerMarketing.fulfillment.items.partnerIntegrations.desc"
+                    "pages.enhancedSellerMarketing.fulfillment.items.partnerIntegrations.desc",
                   ),
                 },
                 {
                   icon: <CheckCircle className="w-5 h-5 stroke-2" />,
                   title: t(
-                    "pages.enhancedSellerMarketing.fulfillment.items.realtimeTracking.title"
+                    "pages.enhancedSellerMarketing.fulfillment.items.realtimeTracking.title",
                   ),
                   desc: t(
-                    "pages.enhancedSellerMarketing.fulfillment.items.realtimeTracking.desc"
+                    "pages.enhancedSellerMarketing.fulfillment.items.realtimeTracking.desc",
                   ),
                 },
                 {
                   icon: <CheckCircle className="w-5 h-5 stroke-2" />,
                   title: t(
-                    "pages.enhancedSellerMarketing.fulfillment.items.policies.title"
+                    "pages.enhancedSellerMarketing.fulfillment.items.policies.title",
                   ),
                   desc: t(
-                    "pages.enhancedSellerMarketing.fulfillment.items.policies.desc"
+                    "pages.enhancedSellerMarketing.fulfillment.items.policies.desc",
                   ),
                 },
               ].map((item, idx) => (
@@ -468,37 +468,37 @@ export default function EnhancedSellerMarketing() {
             {[
               {
                 name: t(
-                  "pages.enhancedSellerMarketing.testimonials.items.localSeller.name"
+                  "pages.enhancedSellerMarketing.testimonials.items.localSeller.name",
                 ),
                 business: t(
-                  "pages.enhancedSellerMarketing.testimonials.items.localSeller.business"
+                  "pages.enhancedSellerMarketing.testimonials.items.localSeller.business",
                 ),
                 text: t(
-                  "pages.enhancedSellerMarketing.testimonials.items.localSeller.text"
+                  "pages.enhancedSellerMarketing.testimonials.items.localSeller.text",
                 ),
                 rating: 5,
               },
               {
                 name: t(
-                  "pages.enhancedSellerMarketing.testimonials.items.bakeryOwner.name"
+                  "pages.enhancedSellerMarketing.testimonials.items.bakeryOwner.name",
                 ),
                 business: t(
-                  "pages.enhancedSellerMarketing.testimonials.items.bakeryOwner.business"
+                  "pages.enhancedSellerMarketing.testimonials.items.bakeryOwner.business",
                 ),
                 text: t(
-                  "pages.enhancedSellerMarketing.testimonials.items.bakeryOwner.text"
+                  "pages.enhancedSellerMarketing.testimonials.items.bakeryOwner.text",
                 ),
                 rating: 5,
               },
               {
                 name: t(
-                  "pages.enhancedSellerMarketing.testimonials.items.electronicsShop.name"
+                  "pages.enhancedSellerMarketing.testimonials.items.electronicsShop.name",
                 ),
                 business: t(
-                  "pages.enhancedSellerMarketing.testimonials.items.electronicsShop.business"
+                  "pages.enhancedSellerMarketing.testimonials.items.electronicsShop.business",
                 ),
                 text: t(
-                  "pages.enhancedSellerMarketing.testimonials.items.electronicsShop.text"
+                  "pages.enhancedSellerMarketing.testimonials.items.electronicsShop.text",
                 ),
                 rating: 5,
               },
